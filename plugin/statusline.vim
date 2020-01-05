@@ -17,12 +17,11 @@ function! ColorMode() abort
   exe 'hi StatusBranch guifg=#dedede guibg=' . color_for_mode
   exe 'hi StatusBranchReverse guifg=' . color_for_mode
 
-  return ''
+  return toupper(mode())
 endfunction
 
 "  
 set statusline=
-set statusline+=%{toupper(mode())}
 set statusline+=%{ColorMode()}
 set statusline+=\ %#StatusBranchReverse#
 set statusline+=%#StatusBranch#
