@@ -17,16 +17,25 @@ function! ColorMode() abort
   exe 'hi StatusBranch guifg=#dedede guibg=' . color_for_mode
   exe 'hi StatusBranchReverse guifg=' . color_for_mode
 
-  return m
+  return m . ' '
+endfunction
+
+function! ShowBranch() abort
+  let b = get(g:,'coc_git_status','')
+  if b == ''
+    return ''
+  endif
+
+  return '  ' . b . ' '
 endfunction
 
 "  
 set statusline=
 set statusline+=%{ColorMode()}
-set statusline+=\ %#StatusBranchReverse#
+set statusline+=%#StatusBranchReverse#
 set statusline+=%#StatusBranch#
-set statusline+=\ %{get(g:,'coc_git_status','')}
-set statusline+=\ %#StatusBranchReverse#
+set statusline+=%{ShowBranch()}
+set statusline+=%#StatusBranchReverse#
 set statusline+=
 set statusline+=%#LineNr#
 set statusline+=\ %m%r%t
