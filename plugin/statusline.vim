@@ -16,6 +16,8 @@ set statusline+=%=%{get(b:,'coc_current_function','')}
 set statusline+=
 set statusline+=\ %y
 set statusline+=\ 
+set statusline+=\ %{get(b:,'coc_git_blame', '')}
+set statusline+=\ 
 set statusline+=\ %l:%c
 set statusline+=\ 
 set statusline+=\ %p%%

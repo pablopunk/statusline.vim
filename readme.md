@@ -7,6 +7,7 @@
 - Current mode
 - Git branch and status
 - File and attributes (read only, modified...)
+- Current line git-blame
 - File type
 - Current line and column
 - File navigation percentage
