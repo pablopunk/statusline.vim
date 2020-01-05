@@ -17,8 +17,8 @@ function! ColorMode() abort
     hi StatusBranch guifg=#dedede guibg=#3867d6
     hi StatusBranchReverse guifg=#3867d6
   elseif m =~ 'C'
-    hi StatusBranch guifg=#dedede guibg=#3867d6
-    hi StatusBranchReverse guifg=#3867d6
+    hi StatusBranch guifg=#dedede guibg=#fc5c65
+    hi StatusBranchReverse guifg=#fc5c65
   endif
 
   return ''
