@@ -1,25 +1,21 @@
 hi StatusLine guibg=NONE
 
+if !exists('g:statusline_color_n') | let g:statusline_color_n = '#8854d0' | en
+if !exists('g:statusline_color_i') | let g:statusline_color_i = '#22a6b3' | en
+if !exists('g:statusline_color_v') | let g:statusline_color_v = '#3867d6' | en
+if !exists('g:statusline_color_c') | let g:statusline_color_c = '#fc5c65' | en
+
 function! GitBlameShort() abort
   let blame = get(b:,'coc_git_blame','')
   return blame =~ 'Not committed' ? 'WIP' : substitute(blame[1:],' .*','', 'g')
 endfunction
 
 function! ColorMode() abort
-  let m = toupper(mode())
-  if m =~ 'N'
-    hi StatusBranch guifg=#dedede guibg=#8854d0
-    hi StatusBranchReverse guifg=#8854d0
-  elseif m =~ 'I'
-    hi StatusBranch guifg=#454545 guibg=#2bcbba
-    hi StatusBranchReverse guifg=#2bcbba
-  elseif m =~ 'V'
-    hi StatusBranch guifg=#dedede guibg=#3867d6
-    hi StatusBranchReverse guifg=#3867d6
-  elseif m =~ 'C'
-    hi StatusBranch guifg=#dedede guibg=#fc5c65
-    hi StatusBranchReverse guifg=#fc5c65
-  endif
+  let m = tolower(mode())
+  let color_for_mode = get(g:,'statusline_color_'.m,'#8854d0') " get color or use default
+
+  exe 'hi StatusBranch guifg=#dedede guibg=' . color_for_mode
+  exe 'hi StatusBranchReverse guifg=' . color_for_mode
 
   return ''
 endfunction

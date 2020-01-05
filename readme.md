@@ -25,6 +25,17 @@ I use [vim-plug](https://github.com/junegunn/vim-plug)
 Plug 'pablopunk/statusline.vim'
 ```
 
+## Custom colors
+
+If you want to use custom colors override this values in your `.vimrc`:
+
+```viml
+let g:statusline_color_n = '#8854d0' " Normal mode
+let g:statusline_color_i = '#22a6b3' " Insert mode
+let g:statusline_color_v = '#3867d6' " Visual mode
+let g:statusline_color_c = '#fc5c65' " Command mode
+```
+
 ## Related
 
 * [Better find command for vim](https://github.com/pablopunk/better-find.vim)
