@@ -7,7 +7,11 @@ if !exists('g:statusline_color_C') | let g:statusline_color_C = '#fc5c65' | en
 
 function! GitBlameShort() abort
   let blame = get(b:,'coc_git_blame','')
-  return blame =~ 'Not committed' ? 'WIP' : substitute(blame[1:],' .*','', 'g')
+  if blame == ''
+    return ''
+  endif
+
+  return blame =~ 'Not committed' ? '   WIP' : '   ' . substitute(blame[1:],' .*','', 'g')
 endfunction
 
 function! ColorMode() abort
@@ -29,6 +33,14 @@ function! ShowBranch() abort
   return '  ' . b . ' '
 endfunction
 
+function! ShowFileType() abort
+  return &filetype == '' ? '' : ' ' . &filetype
+endfunction
+
+function! Show() abort
+  return &filetype == '' ? '' : ' ' . &filetype
+endfunction
+
 "  
 set statusline=
 set statusline+=%{ColorMode()}
@@ -40,10 +52,8 @@ set statusline+=
 set statusline+=%#LineNr#
 set statusline+=\ %m%r%t
 set statusline+=%=%{get(b:,'coc_current_function','')}
-set statusline+=
-set statusline+=\ %y
-set statusline+=\ 
-set statusline+=\ %{GitBlameShort()}
+set statusline+=%{ShowFileType()}
+set statusline+=%{GitBlameShort()}
 set statusline+=\ 
 set statusline+=\ %l:%c
 set statusline+=\ 
