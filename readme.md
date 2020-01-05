@@ -30,10 +30,10 @@ Plug 'pablopunk/statusline.vim'
 If you want to use custom colors override this values in your `.vimrc`:
 
 ```viml
-let g:statusline_color_n = '#8854d0' " Normal mode
-let g:statusline_color_i = '#22a6b3' " Insert mode
-let g:statusline_color_v = '#3867d6' " Visual mode
-let g:statusline_color_c = '#fc5c65' " Command mode
+let g:statusline_color_N = '#8854d0' " Normal mode
+let g:statusline_color_I = '#22a6b3' " Insert mode
+let g:statusline_color_V = '#3867d6' " Visual mode
+let g:statusline_color_C = '#fc5c65' " Command mode
 ```
 
 ## Related
