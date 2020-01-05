@@ -1,8 +1,6 @@
-" Statusline
 hi StatusLine guibg=NONE
 hi StatusBranch guifg=#dedede guibg=#686de0
 hi StatusBranchReverse guifg=#686de0
-
 
 function! GitBlameShort() abort
   let blame = get(b:,'coc_git_blame','')
