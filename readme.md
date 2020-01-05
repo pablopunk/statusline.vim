@@ -4,7 +4,7 @@
 
 ![creenshot](https://raw.githubusercontent.com/pablopunk/statusline.vim/master/screenshot.png)
 
-- Current mode
+- Current mode (and different coloring for each one)
 - Git branch and status
 - File and attributes (read only, modified...)
 - Current line git-blame
