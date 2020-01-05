@@ -2,8 +2,6 @@
 
 > Minimal plugin that creates a nice and simple statusbar
 
-It provides basic functionality for the statusline via native vim functions except for the git functionality provided by [coc.nvim](https://github.com/neoclide/coc.nvim). It requires the plugin `coc-git` to function properly.
-
 ![creenshot](https://raw.githubusercontent.com/pablopunk/statusline.vim/master/screenshot.png)
 
 - Current mode
@@ -14,6 +12,11 @@ It provides basic functionality for the statusline via native vim functions exce
 - File navigation percentage
 
 ## Install
+
+Requires:
+
+- [coc.nvim](https://github.com/neoclide/coc.nvim) with `coc-git` plugin.
+- Some kind of [Nerd font](https://github.com/ryanoasis/nerd-fonts/) for the powerline symbols.
 
 I use [vim-plug](https://github.com/junegunn/vim-plug)
 
