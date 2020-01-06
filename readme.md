@@ -10,8 +10,8 @@
 - Current mode (and different coloring for each one)
 - Git branch and status
 - File and attributes (read only, modified...)
-- Current line git-blame
 - File type
+- Current line git-blame
 - Current line and column
 - File navigation percentage
 
