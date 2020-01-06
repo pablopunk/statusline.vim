@@ -2,7 +2,10 @@
 
 > Minimal plugin that creates a nice and simple statusbar
 
-![creenshot](https://raw.githubusercontent.com/pablopunk/statusline.vim/master/screenshot.png)
+![normal mode screenshot](https://raw.githubusercontent.com/pablopunk/statusline.vim/master/screenshots/n.png)
+![visual mode screenshot](https://raw.githubusercontent.com/pablopunk/statusline.vim/master/screenshots/v.png)
+![insert mode screenshot](https://raw.githubusercontent.com/pablopunk/statusline.vim/master/screenshots/i.png)
+![command mode screenshot](https://raw.githubusercontent.com/pablopunk/statusline.vim/master/screenshots/c.png)
 
 - Current mode (and different coloring for each one)
 - Git branch and status
