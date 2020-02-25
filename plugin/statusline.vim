@@ -31,11 +31,11 @@ function! ShowBranch() abort
     return ''
   endif
 
-  return '  ' . b . ' '
+  return '  ' . b[:13] . ' '
 endfunction
 
 function! ShowFileType() abort
-  return &filetype == '' ? '' : ' ' . &filetype
+  return &filetype == '' ? '' : '  ' . &filetype
 endfunction
 
 function! Show() abort
