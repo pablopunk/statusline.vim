@@ -25,14 +25,25 @@ function! ColorMode() abort
   return m . ' '
 endfunction
 
-function! ShowBranch() abort
-  let b = get(g:,'coc_git_status','')
-  if b == ''
-    return ''
-  endif
-
-  return '  ' . b[:13] . ' '
+function! ShowGitBranch() abort
+  return get(g:, 'git_branch', '')
 endfunction
+
+function! GetGitBranch() abort
+  let g:git_branch = system('git symbolic-ref --short HEAD 2>/dev/null || echo -n "x"')[:-2]
+
+  if g:git_branch == ''
+    return ''
+  else
+    let g:git_branch = g:git_branch[:13]
+  endif
+endfunction
+
+augroup StatusLine
+  au!
+  autocmd BufEnter * call GetGitBranch()
+augroup end
+
 
 function! ShowFileType() abort
   return &filetype == '' ? '' : '  ' . &filetype
@@ -47,7 +58,7 @@ set statusline=
 set statusline+=%#StatusMode#
 set statusline+=%{ColorMode()}
 set statusline+=%#StatusBranch#
-set statusline+=%{ShowBranch()}
+set statusline+=%{ShowGitBranch()}
 set statusline+=%#StatusBranchReverse#
 set statusline+=
 set statusline+=%#LineNr#
