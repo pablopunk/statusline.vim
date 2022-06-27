@@ -20,7 +20,7 @@ function! ColorMode() abort
 
   exe 'hi StatusBranch guifg=#dedede guibg=' . color_for_mode
   exe 'hi StatusBranchReverse guifg=' . color_for_mode
-  exe 'hi StatusMode guifg=' . color_for_mode
+  exe 'hi StatusMode guibg=#dedede guifg=' . color_for_mode
 
   return m . ' '
 endfunction
@@ -33,7 +33,7 @@ function! GetGitBranch() abort
   let g:git_branch = system('git symbolic-ref --short HEAD 2>/dev/null || echo -n "x"')[:-2]
 
   if g:git_branch == ''
-    return ''
+    return
   else
     let g:git_branch = g:git_branch[:13]
   endif
@@ -56,10 +56,11 @@ endfunction
 "  
 set statusline=
 set statusline+=%#StatusMode#
-set statusline+=%{ColorMode()}
+set statusline+=\ %{ColorMode()}
 set statusline+=%#StatusBranch#
-set statusline+=%{ShowGitBranch()}
-set statusline+=%#StatusBranchReverse#
+set statusline+=
+set statusline+=\ %{ShowGitBranch()}
+set statusline+=\ %#StatusBranchReverse#
 set statusline+=
 set statusline+=%#LineNr#
 set statusline+=\ %m%r%t
